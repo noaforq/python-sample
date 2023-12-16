@@ -1,0 +1,7 @@
+job_id,occupational_ability_status,free_input,id,created_at,created_user_id,updated_at,updated_user_id,disabled_at,disabled_user_id,is_disabled
+19924d74-a0c8-4dad-97d2-5a4f14b13b57,1,テキスト1,4ed44c20-242b-4d64-863f-02e675d7cccb,2023-12-11 8:30:00,1,2023-12-11 8:30:00,1,,,FALSE
+9d402aad-a111-4ea6-a4d1-dc6a30c52f7b,2,テキスト2,b1226b2e-3e4a-48bb-97c6-5332aaed66a3,2023-12-11 9:15:00,2,2023-12-11 9:15:00,2,,,FALSE
+19924d74-a0c8-4dad-97d2-5a4f14b13b57,3,テキスト3,9eb11c9a-4617-4268-9184-1fe8c167c35a,2023-12-11 10:00:00,3,2023-12-11 10:00:00,3,,,FALSE
+9d402aad-a111-4ea6-a4d1-dc6a30c52f7b,4,テキスト4,94334175-f299-4d12-bd56-7fa70c62e55d,2023-12-11 10:45:00,1,2023-12-11 10:45:00,1,,,FALSE
+19924d74-a0c8-4dad-97d2-5a4f14b13b57,5,テキスト5,f982228f-cd21-4273-8c2e-dad327aed162,2023-12-11 11:30:00,2,2023-12-11 11:30:00,2,,,FALSE
+9d402aad-a111-4ea6-a4d1-dc6a30c52f7b,1,テキスト6,fc689229-02c2-4e63-a20a-74862e4b8a1a,2023-12-11 12:15:00,3,2023-12-11 12:15:00,3,,,FALSE

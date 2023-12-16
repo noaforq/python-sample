@@ -1,0 +1,3 @@
+selection_id,message_id,file_name,path,id,created_at,created_user_id,updated_at,updated_user_id,disabled_at,disabled_user_id,is_disabled
+91bda3c5-a234-433d-a5d1-6eba1008c209,d8428e95-7ed7-4c68-b730-258355956893,ファイル1,/path/to/file_1.pdf,9f2d5fd2-6d46-4e31-a03a-28b4b870e846,2023-12-11 8:30:00,1,2023-12-11 8:30:00,1,,,FALSE
+25e9f822-932f-4cdb-96da-c9c97b8fe7f3,9ebc6c40-65b1-4c69-b3ad-e37e0740f896,ファイル2,/path/to/file_2.doc,a9b175c2-043a-403c-b517-6563e9807e8b,2023-12-11 9:15:00,2,2023-12-11 9:15:00,2,,,FALSE

@@ -1,0 +1,7 @@
+444株式会社
+
+{{user_account_name}}様が規約を承諾しました。
+
+URL: {{chat_url}}
+
+TechFUL

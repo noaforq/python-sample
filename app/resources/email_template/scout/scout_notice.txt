@@ -1,0 +1,10 @@
+{{user_account_name}}様
+
+{{company_name}}からスカウトがきています！
+
+下記URLよりサイトにアクセスの上、スカウトの確認をお願いいたします。
+
+スカウト一覧（選考管理）URL: {{selection_url}}
+ログインURL: {{login_url}}
+
+TechFUL

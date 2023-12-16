@@ -1,0 +1,7 @@
+444株式会社
+
+{{user_account_name}}様に{{company_name}}様の求人を紹介しました。
+
+URL: {{selection_manage_url}}
+
+TechFUL

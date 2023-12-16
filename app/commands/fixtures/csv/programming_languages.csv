@@ -1,0 +1,6 @@
+job_id,m_programming_language_id,id,created_at,created_user_id,updated_at,updated_user_id,disabled_at,disabled_user_id,is_disabled
+32dd0ac7-42c1-4eb0-bffc-28407569780c,5,889edb62-86e6-4065-8687-69af55d68c46,2023-12-11 8:30:00,1,2023-12-11 8:30:00,1,,,FALSE
+19924d74-a0c8-4dad-97d2-5a4f14b13b57,12,1716e360-5756-45b0-b785-7e91ef02a8fb,2023-12-11 9:15:00,2,2023-12-11 9:15:00,2,,,FALSE
+f3c624b0-67e9-4f2e-8606-3baab40067b1,8,2f28fa83-d370-4c6e-b5dc-1ae7d2bd2cff,2023-12-11 10:00:00,3,2023-12-11 10:00:00,3,,,FALSE
+9d402aad-a111-4ea6-a4d1-dc6a30c52f7b,17,13d0516d-c6d3-419a-8770-8b46d46bccb8,2023-12-11 10:45:00,1,2023-12-11 10:45:00,1,,,FALSE
+afd927f5-f8e8-43ed-909a-95e6f7bcdb75,3,b3a615bb-c2f5-4066-88cf-12af0a941dbf,2023-12-11 11:30:00,2,2023-12-11 11:30:00,2,,,FALSE

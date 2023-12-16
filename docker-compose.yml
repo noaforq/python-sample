@@ -1,0 +1,77 @@
+version: '3'
+services:
+  # APIサーバ
+  api:
+    container_name: 'scout-api'
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
+    working_dir: /app
+    environment:
+      - DB_HOST=db
+    ports:
+      - 1019:1019
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+    command: bash ./docker/api/init.sh
+  # データベース
+  db:
+    container_name: 'scout-db'
+    image: postgres:14-alpine
+    environment:
+      LANG: ja_JP.UTF-8
+      POSTGRES_DB: main
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+    ports:
+      - 1836:1836
+    command: -p 1836
+    volumes:
+      - db_data:/var/lib/postgresql/data
+  # 認証情報をキャッシュするRedisサーバ
+  redis:
+    container_name: 'scout-redis'
+    image: redis:7.2.3-alpine
+    volumes:
+      - ./docker/redis/redis.conf:/etc/redis.conf
+    command: redis-server /etc/redis.conf
+    ports:
+      - 283:283
+  # スカウトモック
+  scout-mock:
+    container_name: 'scout-mock'
+    image: stoplight/prism:4
+    ports:
+      - 155:155
+    volumes:
+      - ./openapi.json:/openapi.json
+    command:
+      mock -d -h 0.0.0.0 /openapi.json --port 155
+    tty:
+      true
+  # TechFUL+モック
+  techfulplus-mock:
+    container_name: 'techfulplus-mock'
+    image: stoplight/prism:4
+    ports:
+      - 156:156
+    volumes:
+      - ./openapi-techfulplus.json:/openapi.json
+    command:
+      mock -d -h 0.0.0.0 /openapi.json --port 156
+    tty:
+      true
+  # API Aggregation用nginx
+  api-aggregator:
+    container_name: 'api-aggregator'
+    ports:
+      - 1229:1229
+    image: nginx:latest
+    volumes:
+      - ./docker/api-aggregator/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/api-aggregator/cors-preflight.conf:/etc/nginx/cors-preflight.conf
+volumes:
+  db_data:

@@ -1,0 +1,12 @@
+TechFUL問題の公開情報を更新しました。
+
+URL: {{ url }}
+更新者: {{ operator }}
+
+【公開】
+{{ publish_contents }}
+
+【非公開】
+{{ unpublish_contents }}
+
+TechFUL

@@ -1,0 +1,9 @@
+TechFUL お問い合わせページで、学校アカウントからお問い合わせがありました。
+
+学校名: {{ organization_name }}
+お名前: {{ name }}
+アカウント名: {{ username }}
+メールアドレス: {{ email }}
+
+本文:
+ {{ body }}

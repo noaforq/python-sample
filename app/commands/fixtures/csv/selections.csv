@@ -1,0 +1,6 @@
+company_id,job_id,student_id,is_scout_refuse,route,step,scheduled_start_date,scheduled_end_date,memo,id,created_at,created_user_id,updated_at,updated_user_id,disabled_at,disabled_user_id,is_disabled
+2,19924d74-a0c8-4dad-97d2-5a4f14b13b57,3,FALSE,1,2,2023-12-11 8:30:00,2023-12-11 9:30:00,Sample Memo 1,758a84cf-5425-4b85-85d8-abd2c6dd9811,2023-12-11 8:30:00,1,2023-12-11 8:30:00,1,,,FALSE
+1,32dd0ac7-42c1-4eb0-bffc-28407569780c,2,FALSE,3,1,2023-12-11 9:45:00,2023-12-11 10:45:00,Sample Memo 2,91bda3c5-a234-433d-a5d1-6eba1008c209,2023-12-11 9:15:00,2,2023-12-11 9:15:00,2,,,FALSE
+3,f3c624b0-67e9-4f2e-8606-3baab40067b1,1,FALSE,2,3,2023-12-11 11:00:00,2023-12-11 12:00:00,Sample Memo 3,4e891d12-a088-4021-aea2-f0162622217e,2023-12-11 10:00:00,1,2023-12-11 10:00:00,1,,,FALSE
+2,afd927f5-f8e8-43ed-909a-95e6f7bcdb75,3,FALSE,1,4,2023-12-11 12:15:00,2023-12-11 13:15:00,Sample Memo 4,da4b8b1b-b8e0-4034-82c0-a94b4b9015d5,2023-12-11 10:45:00,3,2023-12-11 10:45:00,3,,,FALSE
+1,32dd0ac7-42c1-4eb0-bffc-28407569780c,1,FALSE,3,2,2023-12-11 13:30:00,2023-12-11 14:30:00,Sample Memo 5,25e9f822-932f-4cdb-96da-c9c97b8fe7f3,2023-12-11 11:30:00,2,2023-12-11 11:30:00,2,,,FALSE

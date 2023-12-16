@@ -1,0 +1,7 @@
+件名:【{{service_name_subject}}デモ依頼】{{organization_type}}からのお申し込み
+
+本文: {{organization_type}}から{{service_name_body}}デモ依頼のお申し込みがありました。
+{{organization_name_label}}: {{organization_name}}
+依頼主の氏名: {{full_name}}
+依頼主のアカウント名: {{username}}
+Email: {{email}}

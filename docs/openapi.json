@@ -1,0 +1,2259 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "TechFUL API",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000",
+      "description": "api"
+    },
+    {
+      "url": "http://127.0.0.1:4010",
+      "description": "mock"
+    }
+  ],
+  "paths": {
+    "/v1/reactions": {
+      "get": {
+        "tags": [
+          "v1",
+          "reactions"
+        ],
+        "summary": "効果測定取得",
+        "operationId": "getReactions",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReactionsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/reactions/summary": {
+      "get": {
+        "tags": [
+          "v1",
+          "reactions"
+        ],
+        "summary": "効果測定サマリー取得",
+        "operationId": "getReactionsSummary",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReactionsSummaryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/reactions/{job_id}/{selection_id}/agreed": {
+      "post": {
+        "tags": [
+          "v1",
+          "reactions"
+        ],
+        "summary": "効果測定ログ作成-承認",
+        "operationId": "postReactionsAgreed",
+        "parameters": [
+          {
+            "description": "求人ID",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string",
+              "description": "求人ID"
+            },
+            "name": "job_id",
+            "in": "path"
+          },
+          {
+            "description": "選考ID",
+            "required": true,
+            "schema": {
+              "title": "Selection Id",
+              "type": "string",
+              "description": "選考ID"
+            },
+            "name": "selection_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Post Reactions Agreed V1 Reactions  Job Id   Selection Id  Agreed Post",
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/reactions/{job_id}/{selection_id}/applied": {
+      "post": {
+        "tags": [
+          "v1",
+          "reactions"
+        ],
+        "summary": "効果測定ログ作成-応募",
+        "operationId": "postReactionsApplied",
+        "parameters": [
+          {
+            "description": "求人ID",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string",
+              "description": "求人ID"
+            },
+            "name": "job_id",
+            "in": "path"
+          },
+          {
+            "description": "選考ID",
+            "required": true,
+            "schema": {
+              "title": "Selection Id",
+              "type": "string",
+              "description": "選考ID"
+            },
+            "name": "selection_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReactionsAppliedRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Post Reactions Applied V1 Reactions  Job Id   Selection Id  Applied Post",
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/reactions/{job_id}/{selection_id}/opened": {
+      "post": {
+        "tags": [
+          "v1",
+          "reactions"
+        ],
+        "summary": "効果測定ログ作成-開封",
+        "operationId": "postReactionsOpened",
+        "parameters": [
+          {
+            "description": "求人ID",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string",
+              "description": "求人ID"
+            },
+            "name": "job_id",
+            "in": "path"
+          },
+          {
+            "description": "選考ID",
+            "required": true,
+            "schema": {
+              "title": "Selection Id",
+              "type": "string",
+              "description": "選考ID"
+            },
+            "name": "selection_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Post Reactions Opened V1 Reactions  Job Id   Selection Id  Opened Post",
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/reactions/{job_id}/{selection_id}/replied": {
+      "post": {
+        "tags": [
+          "v1",
+          "reactions"
+        ],
+        "summary": "効果測定ログ作成-返信",
+        "operationId": "postReactionsReplied",
+        "parameters": [
+          {
+            "description": "求人ID",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string",
+              "description": "求人ID"
+            },
+            "name": "job_id",
+            "in": "path"
+          },
+          {
+            "description": "選考ID",
+            "required": true,
+            "schema": {
+              "title": "Selection Id",
+              "type": "string",
+              "description": "選考ID"
+            },
+            "name": "selection_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Post Reactions Replied V1 Reactions  Job Id   Selection Id  Replied Post",
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/selections": {
+      "get": {
+        "tags": [
+          "v1",
+          "selections"
+        ],
+        "summary": "選考管理一覧（学生）",
+        "operationId": "getSelections",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Job Id",
+              "type": "string"
+            },
+            "name": "job_id",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Steps",
+              "type": "string"
+            },
+            "name": "steps",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Page",
+              "type": "integer"
+            },
+            "name": "page",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SelectionsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/selections/manage": {
+      "get": {
+        "tags": [
+          "v1",
+          "selections"
+        ],
+        "summary": "選考管理一覧（企業）",
+        "operationId": "getSelectionsManage",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Page",
+              "type": "integer"
+            },
+            "name": "page",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SelectionsManageResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/selections/{job_id}/{student_id}": {
+      "post": {
+        "tags": [
+          "v1",
+          "selections"
+        ],
+        "summary": "スカウト送信",
+        "operationId": "postSelections",
+        "parameters": [
+          {
+            "description": "求人ID",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string",
+              "description": "求人ID"
+            },
+            "name": "job_id",
+            "in": "path"
+          },
+          {
+            "description": "学生ID",
+            "required": true,
+            "schema": {
+              "title": "Student Id",
+              "type": "string",
+              "description": "学生ID"
+            },
+            "name": "student_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectionsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SelectionsJobIdStudentIdResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/selections/{job_id}/{student_id}/memo": {
+      "put": {
+        "tags": [
+          "v1",
+          "selections"
+        ],
+        "summary": "選考メモ更新",
+        "operationId": "putSelectionsMemo",
+        "parameters": [
+          {
+            "description": "求人ID",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string",
+              "description": "求人ID"
+            },
+            "name": "job_id",
+            "in": "path"
+          },
+          {
+            "description": "学生ID",
+            "required": true,
+            "schema": {
+              "title": "Student Id",
+              "type": "string",
+              "description": "学生ID"
+            },
+            "name": "student_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectionsMemoRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SelectionsMemoResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/selections/{job_id}/{student_id}/scheduled_date": {
+      "put": {
+        "tags": [
+          "v1",
+          "selections"
+        ],
+        "summary": "選考予定日更新",
+        "operationId": "putSelectionsScheduledDate",
+        "parameters": [
+          {
+            "description": "求人ID",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string",
+              "description": "求人ID"
+            },
+            "name": "job_id",
+            "in": "path"
+          },
+          {
+            "description": "学生ID",
+            "required": true,
+            "schema": {
+              "title": "Student Id",
+              "type": "string",
+              "description": "学生ID"
+            },
+            "name": "student_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectionsScheduledDateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SelectionsScheduledDateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/selections/{job_id}/{student_id}/step": {
+      "put": {
+        "tags": [
+          "v1",
+          "selections"
+        ],
+        "summary": "選考ステップ更新",
+        "operationId": "putSelectionsStep",
+        "parameters": [
+          {
+            "description": "求人ID",
+            "required": true,
+            "schema": {
+              "title": "Job Id",
+              "type": "string",
+              "description": "求人ID"
+            },
+            "name": "job_id",
+            "in": "path"
+          },
+          {
+            "description": "学生ID",
+            "required": true,
+            "schema": {
+              "title": "Student Id",
+              "type": "string",
+              "description": "学生ID"
+            },
+            "name": "student_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectionsStepRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SelectionsStepResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/companies": {
+      "post": {
+        "tags": [
+          "v1",
+          "companies"
+        ],
+        "summary": "スカウト契約連携",
+        "operationId": "postCompanies",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompaniesRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/companies/{company_id}/scout_used_pre_limit": {
+      "get": {
+        "tags": [
+          "v1",
+          "companies"
+        ],
+        "summary": "スカウト件数取得",
+        "operationId": "getCompaniesScoutUsedPreLimit",
+        "parameters": [
+          {
+            "description": "企業ID",
+            "required": true,
+            "schema": {
+              "title": "Company Id",
+              "type": "string",
+              "description": "企業ID"
+            },
+            "name": "company_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompaniesScoutUsedPreLimitResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/masters/occupations": {
+      "get": {
+        "tags": [
+          "v1",
+          "masters"
+        ],
+        "summary": "利用可能な職種取得",
+        "description": "利用可能な職種を取得する",
+        "operationId": "getOccupations",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get Occupations V1 Masters Occupations Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MasterOccupationsResponse"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "バリデーションエラー",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CompaniesRequest": {
+        "title": "CompaniesRequest",
+        "type": "object",
+        "properties": {
+          "maxScouts": {
+            "title": "Maxscouts",
+            "minimum": 0.0,
+            "type": "integer",
+            "description": "スカウトを送信できる数",
+            "nullable": true
+          },
+          "contractExpirationDate": {
+            "title": "Contractexpirationdate",
+            "type": "string",
+            "description": "スカウトプランの期限が切れる日",
+            "nullable": true
+          },
+          "companyId": {
+            "title": "Companyid",
+            "minimum": 0.0,
+            "type": "integer",
+            "description": "企業ID",
+            "nullable": true
+          },
+          "companyName": {
+            "title": "Companyname",
+            "type": "string",
+            "description": "企業名称",
+            "nullable": true
+          }
+        }
+      },
+      "CompaniesScoutUsedPreLimitResponse": {
+        "title": "CompaniesScoutUsedPreLimitResponse",
+        "required": [
+          "maxAvailableScout",
+          "sentScoutCount"
+        ],
+        "type": "object",
+        "properties": {
+          "maxAvailableScout": {
+            "title": "Maxavailablescout",
+            "type": "integer",
+            "description": "送信可能なスカウト数"
+          },
+          "sentScoutCount": {
+            "title": "Sentscoutcount",
+            "type": "integer",
+            "description": "送信したスカウト数"
+          }
+        }
+      },
+      "MasterOccupationsResponse": {
+        "title": "MasterOccupationsResponse",
+        "type": "object",
+        "properties": {
+          "value": {
+            "title": "Value",
+            "type": "string",
+            "description": "職種",
+            "nullable": true
+          }
+        }
+      },
+      "ReactionsAppliedRequest": {
+        "title": "ReactionsAppliedRequest",
+        "required": [
+          "studentId"
+        ],
+        "type": "object",
+        "properties": {
+          "studentId": {
+            "title": "Studentid",
+            "type": "string",
+            "description": "生徒ID"
+          }
+        }
+      },
+      "ReactionsResponse": {
+        "title": "ReactionsResponse",
+        "required": [
+          "reactionsReports"
+        ],
+        "type": "object",
+        "properties": {
+          "reactionsReports": {
+            "title": "Reactionsreports",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReactionsResponseReactionsReport"
+            },
+            "description": "各スカウト・求人の効果測定で、配列の項目1個が1つの求人に対応する。求人がない場合は空配列になる"
+          }
+        }
+      },
+      "ReactionsResponseJob": {
+        "title": "ReactionsResponseJob",
+        "required": [
+          "viewedCount",
+          "appliedCount",
+          "appliedRate"
+        ],
+        "type": "object",
+        "properties": {
+          "viewedCount": {
+            "title": "Viewedcount",
+            "type": "integer",
+            "description": "開封数"
+          },
+          "appliedCount": {
+            "title": "Appliedcount",
+            "type": "integer",
+            "description": "応募数"
+          },
+          "appliedRate": {
+            "title": "Appliedrate",
+            "type": "number",
+            "description": "応募率"
+          }
+        }
+      },
+      "ReactionsResponseReactionsReport": {
+        "title": "ReactionsResponseReactionsReport",
+        "required": [
+          "scout",
+          "job",
+          "startDate",
+          "positionName"
+        ],
+        "type": "object",
+        "properties": {
+          "scout": {
+            "title": "Scout",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReactionsResponseScout"
+              }
+            ],
+            "description": "スカウト効果測定"
+          },
+          "job": {
+            "title": "Job",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReactionsResponseJob"
+              }
+            ],
+            "description": "公開求人効果測定。求人を公開していない場合はnullになる"
+          },
+          "startDate": {
+            "title": "Startdate",
+            "type": "string",
+            "description": "求人開始日"
+          },
+          "positionName": {
+            "title": "Positionname",
+            "type": "string",
+            "description": "ポジション名"
+          }
+        }
+      },
+      "ReactionsResponseScout": {
+        "title": "ReactionsResponseScout",
+        "required": [
+          "sendCount",
+          "openedCount",
+          "openedRate",
+          "agreedCount",
+          "agreedRate",
+          "repliedCount",
+          "repliedRate"
+        ],
+        "type": "object",
+        "properties": {
+          "sendCount": {
+            "title": "Sendcount",
+            "type": "integer",
+            "description": "送信数"
+          },
+          "openedCount": {
+            "title": "Openedcount",
+            "type": "integer",
+            "description": "開封数"
+          },
+          "openedRate": {
+            "title": "Openedrate",
+            "type": "number",
+            "description": "開封率"
+          },
+          "agreedCount": {
+            "title": "Agreedcount",
+            "type": "integer",
+            "description": "承諾数"
+          },
+          "agreedRate": {
+            "title": "Agreedrate",
+            "type": "number",
+            "description": "承諾率"
+          },
+          "repliedCount": {
+            "title": "Repliedcount",
+            "type": "integer",
+            "description": "返信数"
+          },
+          "repliedRate": {
+            "title": "Repliedrate",
+            "type": "number",
+            "description": "返信率"
+          }
+        }
+      },
+      "ReactionsSummaryResponse": {
+        "title": "ReactionsSummaryResponse",
+        "required": [
+          "reactionSummary"
+        ],
+        "type": "object",
+        "properties": {
+          "reactionSummary": {
+            "title": "Reactionsummary",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReactionsSummaryResponseReactionsReport"
+              }
+            ],
+            "description": "効果測定サマリー"
+          }
+        }
+      },
+      "ReactionsSummaryResponseJob": {
+        "title": "ReactionsSummaryResponseJob",
+        "required": [
+          "totalCount",
+          "viewedCount",
+          "appliedCount",
+          "appliedRate"
+        ],
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "title": "Totalcount",
+            "type": "integer",
+            "description": "総件数"
+          },
+          "viewedCount": {
+            "title": "Viewedcount",
+            "type": "integer",
+            "description": "開封数"
+          },
+          "appliedCount": {
+            "title": "Appliedcount",
+            "type": "integer",
+            "description": "応募数"
+          },
+          "appliedRate": {
+            "title": "Appliedrate",
+            "type": "number",
+            "description": "応募率"
+          }
+        }
+      },
+      "ReactionsSummaryResponseReactionsReport": {
+        "title": "ReactionsSummaryResponseReactionsReport",
+        "required": [
+          "scout",
+          "job"
+        ],
+        "type": "object",
+        "properties": {
+          "scout": {
+            "title": "Scout",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReactionsSummaryResponseScout"
+              }
+            ],
+            "description": "スカウト求人サマリー"
+          },
+          "job": {
+            "title": "Job",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReactionsSummaryResponseJob"
+              }
+            ],
+            "description": "公開求人サマリー"
+          }
+        }
+      },
+      "ReactionsSummaryResponseScout": {
+        "title": "ReactionsSummaryResponseScout",
+        "required": [
+          "totalCount",
+          "sendCount",
+          "openedCount",
+          "openedRate",
+          "agreedCount",
+          "agreedRate",
+          "repliedCount",
+          "repliedRate"
+        ],
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "title": "Totalcount",
+            "type": "integer",
+            "description": "総件数"
+          },
+          "sendCount": {
+            "title": "Sendcount",
+            "type": "integer",
+            "description": "送信数"
+          },
+          "openedCount": {
+            "title": "Openedcount",
+            "type": "integer",
+            "description": "開封数"
+          },
+          "openedRate": {
+            "title": "Openedrate",
+            "type": "number",
+            "description": "開封率"
+          },
+          "agreedCount": {
+            "title": "Agreedcount",
+            "type": "integer",
+            "description": "承諾数"
+          },
+          "agreedRate": {
+            "title": "Agreedrate",
+            "type": "number",
+            "description": "承諾率"
+          },
+          "repliedCount": {
+            "title": "Repliedcount",
+            "type": "integer",
+            "description": "返信数"
+          },
+          "repliedRate": {
+            "title": "Repliedrate",
+            "type": "number",
+            "description": "返信率"
+          }
+        }
+      },
+      "SelectionsJobIdStudentIdResponse": {
+        "title": "SelectionsJobIdStudentIdResponse",
+        "required": [
+          "createAt",
+          "jobId",
+          "studentId"
+        ],
+        "type": "object",
+        "properties": {
+          "createAt": {
+            "title": "Createat",
+            "type": "string",
+            "description": "スカウト送信キューへの追加日時"
+          },
+          "jobId": {
+            "title": "Jobid",
+            "type": "string",
+            "description": "選考ID"
+          },
+          "studentId": {
+            "title": "Studentid",
+            "type": "string",
+            "description": "学生ID"
+          }
+        }
+      },
+      "SelectionsManageResponse": {
+        "title": "SelectionsManageResponse",
+        "required": [
+          "totalPage",
+          "currentPage",
+          "selections"
+        ],
+        "type": "object",
+        "properties": {
+          "totalPage": {
+            "title": "Totalpage",
+            "type": "integer",
+            "description": "総ページ数"
+          },
+          "currentPage": {
+            "title": "Currentpage",
+            "type": "integer",
+            "description": "現在のページ"
+          },
+          "selections": {
+            "title": "Selections",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsManageResponseSelection"
+            },
+            "description": "選考一覧"
+          }
+        }
+      },
+      "SelectionsManageResponseSelection": {
+        "title": "SelectionsManageResponseSelection",
+        "required": [
+          "jobId",
+          "jobTitle",
+          "studentId",
+          "studentFullname",
+          "studentAddress",
+          "studentAge",
+          "studentPreferredProgrammingLanguages",
+          "studentPreferredFrameworks",
+          "employmentStatus",
+          "selectionStep",
+          "selectionMethod",
+          "messageTimelineId",
+          "startDate",
+          "endDate",
+          "updateDate",
+          "entryDate",
+          "lastMessageDate",
+          "memo"
+        ],
+        "type": "object",
+        "properties": {
+          "jobId": {
+            "title": "Jobid",
+            "type": "string",
+            "description": "求人ID"
+          },
+          "jobTitle": {
+            "title": "Jobtitle",
+            "type": "string",
+            "description": "求人タイトル"
+          },
+          "studentId": {
+            "title": "Studentid",
+            "type": "string",
+            "description": "応募している学生（以下学生）アカウントのID"
+          },
+          "studentFullname": {
+            "title": "Studentfullname",
+            "type": "string",
+            "description": "学生の本名"
+          },
+          "studentAddress": {
+            "title": "Studentaddress",
+            "type": "string",
+            "description": "学生の居住地（現状都道府県まで）"
+          },
+          "studentAge": {
+            "title": "Studentage",
+            "type": "integer",
+            "description": "学生の年齢"
+          },
+          "studentPreferredProgrammingLanguages": {
+            "title": "Studentpreferredprogramminglanguages",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "得意な言語"
+          },
+          "studentPreferredFrameworks": {
+            "title": "Studentpreferredframeworks",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "得意なフレームワーク"
+          },
+          "employmentStatus": {
+            "title": "Employmentstatus",
+            "type": "integer",
+            "description": "雇用形態。1 FULL_TIME、2 INTERN、3 PART_TIMER、4 NEW_GRADUATE、5 CONTRACT_EMPLOYEE、6 SUBCONTRACTING、7 TEMPORARY_EMPLOYEE"
+          },
+          "selectionStep": {
+            "title": "Selectionstep",
+            "type": "integer",
+            "description": "選考状況。10 応募中、11 スカウト承認待ち、20 書類選考、21 1次面接、22 2次面接、23 3次面接、24 4次面接、25 5次面接、30 内定出し、31 内定承諾、32 入社済み、40 スカウト不承諾、41 お見送り、42 辞退、49 終了"
+          },
+          "selectionMethod": {
+            "title": "Selectionmethod",
+            "type": "integer",
+            "description": "求人の選考ルート。1 スカウト、2 応募"
+          },
+          "messageTimelineId": {
+            "title": "Messagetimelineid",
+            "type": "string",
+            "description": "メッセージタイムラインID"
+          },
+          "startDate": {
+            "title": "Startdate",
+            "type": "string",
+            "description": "選考開始予定日"
+          },
+          "endDate": {
+            "title": "Enddate",
+            "type": "string",
+            "description": "選考終了予定日"
+          },
+          "updateDate": {
+            "title": "Updatedate",
+            "type": "string"
+          },
+          "entryDate": {
+            "title": "Entrydate",
+            "type": "string",
+            "description": "選考開始日"
+          },
+          "lastMessageDate": {
+            "title": "Lastmessagedate",
+            "type": "string",
+            "description": "最後にメッセージをやり取りした日"
+          },
+          "memo": {
+            "title": "Memo",
+            "type": "string",
+            "description": "選考に紐づくメモ"
+          }
+        }
+      },
+      "SelectionsMemoRequest": {
+        "title": "SelectionsMemoRequest",
+        "required": [
+          "memo"
+        ],
+        "type": "object",
+        "properties": {
+          "memo": {
+            "title": "Memo",
+            "type": "string",
+            "description": "メモの中身"
+          }
+        }
+      },
+      "SelectionsMemoResponse": {
+        "title": "SelectionsMemoResponse",
+        "required": [
+          "memo",
+          "jobId",
+          "studentId"
+        ],
+        "type": "object",
+        "properties": {
+          "memo": {
+            "title": "Memo",
+            "type": "string",
+            "description": "更新後のメモの中身"
+          },
+          "jobId": {
+            "title": "Jobid",
+            "type": "integer",
+            "description": "選考ID"
+          },
+          "studentId": {
+            "title": "Studentid",
+            "type": "integer",
+            "description": "学生ID"
+          }
+        }
+      },
+      "SelectionsRequest": {
+        "title": "SelectionsRequest",
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "description": "リクエストボディ"
+          }
+        }
+      },
+      "SelectionsResponse": {
+        "title": "SelectionsResponse",
+        "required": [
+          "totalPage",
+          "currentPage",
+          "selections"
+        ],
+        "type": "object",
+        "properties": {
+          "totalPage": {
+            "title": "Totalpage",
+            "type": "integer",
+            "description": "総ページ数"
+          },
+          "currentPage": {
+            "title": "Currentpage",
+            "type": "integer",
+            "description": "現在のページ"
+          },
+          "selections": {
+            "title": "Selections",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseSelection"
+            },
+            "description": "選考一覧"
+          }
+        }
+      },
+      "SelectionsResponseArea": {
+        "title": "SelectionsResponseArea",
+        "required": [
+          "areaId",
+          "areaName"
+        ],
+        "type": "object",
+        "properties": {
+          "areaId": {
+            "title": "Areaid",
+            "type": "integer",
+            "description": "エリアID"
+          },
+          "areaName": {
+            "title": "Areaname",
+            "type": "string",
+            "description": "エリア名"
+          }
+        }
+      },
+      "SelectionsResponseCommutingTime": {
+        "title": "SelectionsResponseCommutingTime",
+        "required": [
+          "commutingTimeFrom",
+          "commutingTimeTo"
+        ],
+        "type": "object",
+        "properties": {
+          "commutingTimeFrom": {
+            "title": "Commutingtimefrom",
+            "type": "string",
+            "description": "始業時間"
+          },
+          "commutingTimeTo": {
+            "title": "Commutingtimeto",
+            "type": "string",
+            "description": "終業時間"
+          }
+        }
+      },
+      "SelectionsResponseEmploymentManagement": {
+        "title": "SelectionsResponseEmploymentManagement",
+        "required": [
+          "employmentManagementStatus",
+          "employmentManagementStatusFreeInput"
+        ],
+        "type": "object",
+        "properties": {
+          "employmentManagementStatus": {
+            "title": "Employmentmanagementstatus",
+            "type": "integer",
+            "description": "企業における雇用管理に関する状況。1 PAID_HOLIDAY、2 CHILDCARE_LEAVE、3 PERCENTAGE_OF_WOMEN"
+          },
+          "employmentManagementStatusFreeInput": {
+            "title": "Employmentmanagementstatusfreeinput",
+            "type": "string",
+            "description": "企業における雇用管理に関する状況詳細"
+          }
+        }
+      },
+      "SelectionsResponseFeature": {
+        "title": "SelectionsResponseFeature",
+        "required": [
+          "featuresId",
+          "featuresName"
+        ],
+        "type": "object",
+        "properties": {
+          "featuresId": {
+            "title": "Featuresid",
+            "type": "integer",
+            "description": "フレームワークID"
+          },
+          "featuresName": {
+            "title": "Featuresname",
+            "type": "string",
+            "description": "フレームワーク名"
+          }
+        }
+      },
+      "SelectionsResponseFramework": {
+        "title": "SelectionsResponseFramework",
+        "required": [
+          "frameworksId",
+          "frameworksName"
+        ],
+        "type": "object",
+        "properties": {
+          "frameworksId": {
+            "title": "Frameworksid",
+            "type": "integer",
+            "description": "フレームワークID"
+          },
+          "frameworksName": {
+            "title": "Frameworksname",
+            "type": "string",
+            "description": "フレームワーク名"
+          }
+        }
+      },
+      "SelectionsResponseJob": {
+        "title": "SelectionsResponseJob",
+        "required": [
+          "jobTitle",
+          "updateAt",
+          "publicationStartDate",
+          "publicationEndDate",
+          "jobDescription",
+          "targetPeople",
+          "workLocation",
+          "initiativesToPreventPassiveSmoking",
+          "employmentStatus",
+          "contractPeriod",
+          "trialPeriod",
+          "welfare",
+          "companyName",
+          "formalName",
+          "logoImageUri",
+          "imageUri",
+          "corporateWebsiteUri",
+          "contactEmailAddress",
+          "address",
+          "numberOfEmployee",
+          "averageAge",
+          "establishmentDate",
+          "capitalStock",
+          "majorShareholder",
+          "sales",
+          "recruitmentRecord",
+          "description",
+          "businessDetail",
+          "philosophy",
+          "chiefExecutiveOfficer"
+        ],
+        "type": "object",
+        "properties": {
+          "jobTitle": {
+            "title": "Jobtitle",
+            "type": "string",
+            "description": "求人ポジション名"
+          },
+          "skillLevel": {
+            "title": "Skilllevel",
+            "type": "integer",
+            "description": "スキルレベル。0 CLASSLESS、1 BEGINNER、2 ELEMENTARY、3 INTERMEDIATE、4 ADVANCED",
+            "nullable": true
+          },
+          "jobImage": {
+            "title": "Jobimage",
+            "type": "string",
+            "description": "求人画像",
+            "nullable": true
+          },
+          "salaryFrom": {
+            "title": "Salaryfrom",
+            "type": "integer",
+            "description": "給与形態。1 ANNUAL_INCOME、2 MONTHLY_SALARY、3 HOURLY_WAGE",
+            "nullable": true
+          },
+          "minSalaryAmount": {
+            "title": "Minsalaryamount",
+            "type": "integer",
+            "description": "最小給与額",
+            "nullable": true
+          },
+          "maxSalaryAmount": {
+            "title": "Maxsalaryamount",
+            "type": "integer",
+            "description": "\t最大給与額",
+            "nullable": true
+          },
+          "area": {
+            "title": "Area",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseArea"
+            },
+            "description": "エリア",
+            "nullable": true
+          },
+          "features": {
+            "title": "Features",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseFeature"
+            },
+            "description": "特徴",
+            "nullable": true
+          },
+          "programmingLanguages": {
+            "title": "Programminglanguages",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseProgrammingLanguage"
+            },
+            "description": "プログラミング言語",
+            "nullable": true
+          },
+          "frameworks": {
+            "title": "Frameworks",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseFramework"
+            },
+            "description": "フレームワーク",
+            "nullable": true
+          },
+          "skills": {
+            "title": "Skills",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseSkill"
+            },
+            "description": "スキル",
+            "nullable": true
+          },
+          "updateAt": {
+            "title": "Updateat",
+            "type": "string",
+            "description": "最終更新日"
+          },
+          "publicationStartDate": {
+            "title": "Publicationstartdate",
+            "type": "string",
+            "description": "掲載開始日"
+          },
+          "publicationEndDate": {
+            "title": "Publicationenddate",
+            "type": "string",
+            "description": "掲載終了日"
+          },
+          "occupation": {
+            "title": "Occupation",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseOccupation"
+            },
+            "description": "職種",
+            "nullable": true
+          },
+          "jobDescription": {
+            "title": "Jobdescription",
+            "type": "string",
+            "description": "仕事内容"
+          },
+          "targetPeople": {
+            "title": "Targetpeople",
+            "type": "string",
+            "description": "対象となる方",
+            "nullable": true
+          },
+          "workLocation": {
+            "title": "Worklocation",
+            "type": "string",
+            "description": "勤務地"
+          },
+          "numberOfPeopleHired": {
+            "title": "Numberofpeoplehired",
+            "type": "integer",
+            "description": "採用人数",
+            "nullable": true
+          },
+          "initiativesToPreventPassiveSmoking": {
+            "title": "Initiativestopreventpassivesmoking",
+            "type": "integer",
+            "description": "集合場所における受動喫煙防止の取り組み。1 NOTHING、2 NO_SMOKING_ON_SITE、3 NO_SMOKING_INDOORS、4 NO_SMOKING_INDOORS_PRINCIPLE、5 INDOOR_SMOKING_ALLOWED、6 OUTDOOR_SMOKING_ALLOWED、7 OTHERS"
+          },
+          "employmentStatus": {
+            "title": "Employmentstatus",
+            "type": "integer",
+            "description": "雇用形態。1 FULL_TIME、2 INTERN、3 PART_TIMER、4 NEW_GRADUATE、5 CONTRACT_EMPLOYEE、6 SUBCONTRACTING、7 TEMPORARY_EMPLOYEE"
+          },
+          "contractPeriod": {
+            "title": "Contractperiod",
+            "type": "string",
+            "description": "雇用期間"
+          },
+          "trialPeriod": {
+            "title": "Trialperiod",
+            "type": "integer",
+            "description": "試用期間。0 NOTHING、1 ONE_MONTH、2 TWO_MONTH、3 THREE_MONTH、4 FOUR_MONTH、5 FIVE_MONTH、6 SIX_MONTH"
+          },
+          "salarySupplement": {
+            "title": "Salarysupplement",
+            "type": "string",
+            "description": "給与補足",
+            "nullable": true
+          },
+          "bonus": {
+            "title": "Bonus",
+            "type": "string",
+            "description": "賞与",
+            "nullable": true
+          },
+          "commutingTime": {
+            "title": "Commutingtime",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseCommutingTime"
+            },
+            "description": "勤務時間",
+            "nullable": true
+          },
+          "commutingTimeSupplement": {
+            "title": "Commutingtimesupplement",
+            "type": "string",
+            "description": "勤務時間補足",
+            "nullable": true
+          },
+          "overtimeWork": {
+            "title": "Overtimework",
+            "type": "boolean",
+            "description": "時間外勤務",
+            "nullable": true
+          },
+          "overtimeWorkFreeInput": {
+            "title": "Overtimeworkfreeinput",
+            "type": "string",
+            "description": "時間外勤務の自由入力",
+            "nullable": true
+          },
+          "holidaysOrVacation": {
+            "title": "Holidaysorvacation",
+            "type": "string",
+            "description": "休日・休暇",
+            "nullable": true
+          },
+          "welfare": {
+            "title": "Welfare",
+            "type": "string",
+            "description": "福利厚生"
+          },
+          "trainingSystem": {
+            "title": "Trainingsystem",
+            "type": "string",
+            "description": "研修制度",
+            "nullable": true
+          },
+          "recruitmentFlows": {
+            "title": "Recruitmentflows",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "福利厚生",
+            "nullable": true
+          },
+          "selectionMethod": {
+            "title": "Selectionmethod",
+            "type": "string",
+            "description": "選考方法",
+            "nullable": true
+          },
+          "submittedDocument": {
+            "title": "Submitteddocument",
+            "type": "string",
+            "description": "提出書類",
+            "nullable": true
+          },
+          "recruitment": {
+            "title": "Recruitment",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseRecruitment"
+            },
+            "description": "募集採用に関する状況に関して",
+            "default": []
+          },
+          "occupationalAbility": {
+            "title": "Occupationalability",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseOccupationalAbility"
+            },
+            "description": "職業能力の開発・向上に関する状況に関して",
+            "default": []
+          },
+          "employmentManagement": {
+            "title": "Employmentmanagement",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectionsResponseEmploymentManagement"
+            },
+            "description": "企業における雇用管理に関して",
+            "default": []
+          },
+          "contactInformation": {
+            "title": "Contactinformation",
+            "type": "string",
+            "description": "問い合わせ先",
+            "nullable": true
+          },
+          "originalContent1Title": {
+            "title": "Originalcontent1Title",
+            "type": "string",
+            "description": "オリジナルコンテンツ1タイトル",
+            "nullable": true
+          },
+          "originalContent1Text": {
+            "title": "Originalcontent1Text",
+            "type": "string",
+            "description": "オリジナルコンテンツ1本文",
+            "nullable": true
+          },
+          "originalContent2Title": {
+            "title": "Originalcontent2Title",
+            "type": "string",
+            "description": "オリジナルコンテンツ2タイトル",
+            "nullable": true
+          },
+          "originalContent2Text": {
+            "title": "Originalcontent2Text",
+            "type": "string",
+            "description": "オリジナルコンテンツ2本文",
+            "nullable": true
+          },
+          "companyName": {
+            "title": "Companyname",
+            "type": "string",
+            "description": "企業名"
+          },
+          "formalName": {
+            "title": "Formalname",
+            "type": "string",
+            "description": "企業の正式名"
+          },
+          "logoImageUri": {
+            "title": "Logoimageuri",
+            "type": "string",
+            "description": "企業ロゴのURI"
+          },
+          "imageUri": {
+            "title": "Imageuri",
+            "type": "string",
+            "description": "企業のサムネイルURI"
+          },
+          "corporateWebsiteUri": {
+            "title": "Corporatewebsiteuri",
+            "type": "string",
+            "description": "コーポレートサイトURI"
+          },
+          "contactEmailAddress": {
+            "title": "Contactemailaddress",
+            "type": "string",
+            "description": "連絡先メールアドレス"
+          },
+          "address": {
+            "title": "Address",
+            "type": "string",
+            "description": "企業所在地"
+          },
+          "numberOfEmployee": {
+            "title": "Numberofemployee",
+            "type": "integer",
+            "description": "従業員数"
+          },
+          "averageAge": {
+            "title": "Averageage",
+            "type": "integer",
+            "description": "平均年齢"
+          },
+          "establishmentDate": {
+            "title": "Establishmentdate",
+            "type": "integer",
+            "description": "\t設立日"
+          },
+          "capitalStock": {
+            "title": "Capitalstock",
+            "type": "integer",
+            "description": "資本金"
+          },
+          "majorShareholder": {
+            "title": "Majorshareholder",
+            "type": "string",
+            "description": "主要株主"
+          },
+          "sales": {
+            "title": "Sales",
+            "type": "integer",
+            "description": "売上"
+          },
+          "recruitmentRecord": {
+            "title": "Recruitmentrecord",
+            "type": "string",
+            "description": "主要株主"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "description": "主要株主"
+          },
+          "businessDetail": {
+            "title": "Businessdetail",
+            "type": "string",
+            "description": "主要株主"
+          },
+          "philosophy": {
+            "title": "Philosophy",
+            "type": "string",
+            "description": "主要株主"
+          },
+          "chiefExecutiveOfficer": {
+            "title": "Chiefexecutiveofficer",
+            "type": "string",
+            "description": "主要株主"
+          }
+        }
+      },
+      "SelectionsResponseOccupation": {
+        "title": "SelectionsResponseOccupation",
+        "required": [
+          "occupationId",
+          "commutingTimeTo"
+        ],
+        "type": "object",
+        "properties": {
+          "occupationId": {
+            "title": "Occupationid",
+            "type": "integer",
+            "description": "始業時間"
+          },
+          "commutingTimeTo": {
+            "title": "Commutingtimeto",
+            "type": "string",
+            "description": "終業時間"
+          }
+        }
+      },
+      "SelectionsResponseOccupationalAbility": {
+        "title": "SelectionsResponseOccupationalAbility",
+        "required": [
+          "occupationalAbilityStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "occupationalAbilityStatus": {
+            "title": "Occupationalabilitystatus",
+            "type": "integer",
+            "description": "職業能力の開発・向上に関する状況。1 TRAINING、2 SELF_ENLIGHTENMENT、3 MENTOR、4 CAREER_CONSULTING、5 IN_HOUSE_TEST"
+          },
+          "occupationalAbilityStatusFreeInput": {
+            "title": "Occupationalabilitystatusfreeinput",
+            "type": "string",
+            "description": "企業における雇用管理に関する状況詳細",
+            "nullable": true
+          }
+        }
+      },
+      "SelectionsResponseProgrammingLanguage": {
+        "title": "SelectionsResponseProgrammingLanguage",
+        "required": [
+          "programmingLanguagesId",
+          "programmingLanguagesName"
+        ],
+        "type": "object",
+        "properties": {
+          "programmingLanguagesId": {
+            "title": "Programminglanguagesid",
+            "type": "integer",
+            "description": "フレームワークID"
+          },
+          "programmingLanguagesName": {
+            "title": "Programminglanguagesname",
+            "type": "string",
+            "description": "フレームワーク名"
+          }
+        }
+      },
+      "SelectionsResponseRecruitment": {
+        "title": "SelectionsResponseRecruitment",
+        "required": [
+          "recruitmentStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "recruitmentStatus": {
+            "title": "Recruitmentstatus",
+            "type": "integer",
+            "description": "募集採用に関する状況。1 NUM_OF_HIRES_AND_JOB_LEAVERS、2 NUM_OF_HIRES_BY_GENDER、3 AVERAGE_LENGTH_OF_SERVICE"
+          },
+          "recruitmentStatusFreeInput": {
+            "title": "Recruitmentstatusfreeinput",
+            "type": "string",
+            "description": "募集採用に関する状況詳細",
+            "nullable": true
+          }
+        }
+      },
+      "SelectionsResponseSelection": {
+        "title": "SelectionsResponseSelection",
+        "required": [
+          "messageTimelineId",
+          "job",
+          "selectionMethod",
+          "selectionStep",
+          "startDate",
+          "endDate",
+          "memo",
+          "updateDate",
+          "entryDate",
+          "lastMessageDate"
+        ],
+        "type": "object",
+        "properties": {
+          "messageTimelineId": {
+            "title": "Messagetimelineid",
+            "type": "string",
+            "description": "メッセージタイムラインのID"
+          },
+          "job": {
+            "title": "Job",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SelectionsResponseJob"
+              }
+            ],
+            "description": "none"
+          },
+          "selectionMethod": {
+            "title": "Selectionmethod",
+            "type": "string",
+            "description": "選考ルート",
+            "nullable": true
+          },
+          "selectionStep": {
+            "title": "Selectionstep",
+            "minimum": 0.0,
+            "type": "integer",
+            "description": "選考状況。10 応募中、11 スカウト承認待ち、20 書類選考、21 1次面接、22 2次面接、23 3次面接、24 4次面接、25 5次面接、30 内定出し、31 内定承諾、32 入社済み、40 スカウト不承諾、41 お見送り、42 辞退、49 終了"
+          },
+          "startDate": {
+            "title": "Startdate",
+            "type": "string",
+            "description": "選考開始予定日"
+          },
+          "endDate": {
+            "title": "Enddate",
+            "type": "string",
+            "description": "選考終了予定日"
+          },
+          "memo": {
+            "title": "Memo",
+            "type": "string",
+            "description": "選考に紐づくメモ"
+          },
+          "updateDate": {
+            "title": "Updatedate",
+            "type": "string"
+          },
+          "entryDate": {
+            "title": "Entrydate",
+            "type": "string",
+            "description": "選考開始日"
+          },
+          "lastMessageDate": {
+            "title": "Lastmessagedate",
+            "type": "string",
+            "description": "最後にメッセージをやり取りした日"
+          },
+          "hasAddedInFavorites": {
+            "title": "Hasaddedinfavorites",
+            "type": "boolean",
+            "description": "お気に入りに登録済みか。true 登録済み、false 登録していない",
+            "default": false
+          }
+        }
+      },
+      "SelectionsResponseSkill": {
+        "title": "SelectionsResponseSkill",
+        "required": [
+          "skillsId",
+          "skillsName"
+        ],
+        "type": "object",
+        "properties": {
+          "skillsId": {
+            "title": "Skillsid",
+            "type": "integer",
+            "description": "スキルID"
+          },
+          "skillsName": {
+            "title": "Skillsname",
+            "type": "string",
+            "description": "スキル名"
+          }
+        }
+      },
+      "SelectionsScheduledDateRequest": {
+        "title": "SelectionsScheduledDateRequest",
+        "required": [
+          "scheduledStartDate",
+          "scheduledEndDate"
+        ],
+        "type": "object",
+        "properties": {
+          "scheduledStartDate": {
+            "title": "Scheduledstartdate",
+            "type": "string",
+            "description": "選考開始日"
+          },
+          "scheduledEndDate": {
+            "title": "Scheduledenddate",
+            "type": "string",
+            "description": "選考終了日"
+          }
+        }
+      },
+      "SelectionsScheduledDateResponse": {
+        "title": "SelectionsScheduledDateResponse",
+        "required": [
+          "scheduledStartDate",
+          "scheduledEndDate",
+          "jobId",
+          "studentId"
+        ],
+        "type": "object",
+        "properties": {
+          "scheduledStartDate": {
+            "title": "Scheduledstartdate",
+            "type": "string",
+            "description": "更新後の選考開始日"
+          },
+          "scheduledEndDate": {
+            "title": "Scheduledenddate",
+            "type": "string",
+            "description": "更新後の選考終了日"
+          },
+          "jobId": {
+            "title": "Jobid",
+            "type": "integer",
+            "description": "選考ID"
+          },
+          "studentId": {
+            "title": "Studentid",
+            "type": "integer",
+            "description": "学生ID"
+          }
+        }
+      },
+      "SelectionsStepRequest": {
+        "title": "SelectionsStepRequest",
+        "required": [
+          "selectionStep"
+        ],
+        "type": "object",
+        "properties": {
+          "selectionStep": {
+            "title": "Selectionstep",
+            "type": "integer",
+            "description": "選考ステップ"
+          }
+        }
+      },
+      "SelectionsStepResponse": {
+        "title": "SelectionsStepResponse",
+        "required": [
+          "selectionStep",
+          "jobId",
+          "studentId"
+        ],
+        "type": "object",
+        "properties": {
+          "selectionStep": {
+            "title": "Selectionstep",
+            "type": "integer",
+            "description": "更新後の選考ステップ"
+          },
+          "jobId": {
+            "title": "Jobid",
+            "type": "integer",
+            "description": "選考ID"
+          },
+          "studentId": {
+            "title": "Studentid",
+            "type": "integer",
+            "description": "学生ID"
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "errorCode",
+          "message",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "title": "Errorcode",
+            "type": "string",
+            "example": "VALIDATION_ERROR"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "example": "入力値が不正です"
+          },
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationErrorDetail"
+            }
+          }
+        }
+      },
+      "ValidationErrorDetail": {
+        "title": "ValidationErrorDetail",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Loc",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            }
+          },
+          "msg": {
+            "title": "Msg",
+            "type": "string"
+          },
+          "type": {
+            "title": "Type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

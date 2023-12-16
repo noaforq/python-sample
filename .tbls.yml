@@ -1,0 +1,25 @@
+# DSN (Database Source Name) to connect database
+dsn: postgres://postgres:postgres@localhost:5432/main?sslmode=disable
+
+# Path to generate document
+# Default is `dbdoc`
+docPath: docs/dbdoc
+
+format:
+  # Adjust the column width of Markdown format table
+  # Default is false
+  adjust: true
+  # Sort the order of table list and columns
+  # Default is false
+  sort: false
+  # Display sequential numbers in table rows
+  # Default is false
+  number: false
+  # The comments for each table in the Tables section of the index page will display the text up to the first double newline (first paragraph).
+  # Default is false
+  showOnlyFirstParagraph: true
+  # Hide table columns without values
+  # Default is false
+  hideColumnsWithoutValues: true
+  # It can be boolean or array
+  # hideColumnsWithoutValues: ["Parents", "Children"]

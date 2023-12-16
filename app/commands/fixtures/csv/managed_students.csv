@@ -1,0 +1,4 @@
+student_id,account_name,display_name,id,created_at,created_user_id,updated_at,updated_user_id,disabled_at,disabled_user_id,is_disabled
+1,1@example.com,田中太郎,11b3bf33-fd99-4dec-9c16-b00b00e83003,2023-01-15 8:00:00,1,2023-01-15 8:00:00,1,,,FALSE
+2,2@example.com,山田花子,7a2d88a8-9316-4c27-bb03-ed99ec041be2,2023-02-20 10:30:00,2,2023-02-20 10:30:00,2,,,FALSE
+3,3@example.com,佐藤健,d913c0f2-8255-4185-803a-c3b4caa8bd99,2023-03-10 14:45:00,3,2023-03-10 14:45:00,3,,,FALSE

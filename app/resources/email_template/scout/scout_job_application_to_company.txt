@@ -1,0 +1,7 @@
+{{company_name}}様
+
+{{user_account_name}}様が{{job_title}}の求人に応募しました。
+
+ URL: {{chat_room_url}}
+
+TechFUL

@@ -1,0 +1,8 @@
+[
+    {
+      "origin": ["http://localhost:3000", "https://techful-web-staging-dqec4tzztq-an.a.run.app"],
+      "method": ["HEAD", "GET"],
+      "responseHeader": ["Content-Type"],
+      "maxAgeSeconds": 3600
+    }
+]

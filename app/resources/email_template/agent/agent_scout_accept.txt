@@ -1,0 +1,10 @@
+444株式会社
+
+{{user_account_name}}様の求人の選考ステップが変更されました。
+
+企業名: {{company_name}}
+選考ステップ: {{selection_step}}
+
+URL: {{selection_url}}
+
+TechFUL

@@ -1,0 +1,4 @@
+company_id,name,max_scouts,contract_expiration_date,id,created_at,created_user_id,updated_at,updated_user_id,disabled_at,disabled_user_id,is_disabled
+1,ABC Inc.,10,2023-12-31 23:59:59+00,d7106c43e4b846fba83d12c4f52ff68c,2023-01-15 8:30:00,1,2023-11-20 15:45:00,1,,,FALSE
+2,XYZ Corporation,15,2024-06-30 18:00:00+00,a82f5e38b0a847f4b6c8d13e2f5a30d1,2022-09-05 12:00:00,2,2023-10-10 9:20:00,2,,,FALSE
+3,Sample Co.,8,2023-08-15 10:00:00+00,fg3a92l4n5s8d9v5b3e1d0g9t4r7e2a4,2023-04-20 16:30:00,3,2023-07-25 11:55:00,3,,,FALSE

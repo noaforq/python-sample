@@ -1,0 +1,6 @@
+company_id,student_id,id,created_at,created_user_id,updated_at,updated_user_id,disabled_at,disabled_user_id,is_disabled
+1,2,94ed2c2f-df8d-4c8d-ae69-97e0f5862a2a,2023-12-11 8:30:00,1,2023-12-11 8:30:00,1,,,FALSE
+2,3,78573e9b-6c63-4b70-91a4-9b9a326f54a7,2023-12-11 9:15:00,2,2023-12-11 9:15:00,2,,,FALSE
+1,1,3f6ef05d-2080-43ff-b37c-0d4eb7cf37f4,2023-12-11 10:00:00,1,2023-12-11 10:00:00,1,,,FALSE
+3,2,17d13f37-2929-4743-a905-99f0906b77fe,2023-12-11 10:45:00,3,2023-12-11 10:45:00,3,,,FALSE
+2,3,9f01fc92-8c0d-439b-92f0-77cf0ab675cb,2023-12-11 11:30:00,2,2023-12-11 11:30:00,2,,,FALSE

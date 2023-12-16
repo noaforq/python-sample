@@ -1,0 +1,8 @@
+[
+    {
+      "origin": ["https://techful-web-m5efkezcoq-an.a.run.app"],
+      "method": ["HEAD", "GET"],
+      "responseHeader": ["Content-Type"],
+      "maxAgeSeconds": 3600
+    }
+]

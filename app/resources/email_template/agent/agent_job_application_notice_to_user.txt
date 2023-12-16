@@ -1,0 +1,8 @@
+{{user_account_name}}様
+
+{{company_name}}の求人
+{{job_title}}に応募しました。
+
+求人詳細URL:{{job_detail_url}}
+
+TechFUL

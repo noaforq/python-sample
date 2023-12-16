@@ -1,0 +1,12 @@
+{{user_account_name}}様
+
+{{company_name}}の選考ステップが変更されました。
+
+下記URLよりサイトにアクセスの上、確認をお願いいたします。
+
+企業名: {{company_name}}
+選考ステップ: {{selection_step}}
+
+スカウト一覧（選考管理）URL: {{selection_manage_url}}
+
+TechFUL

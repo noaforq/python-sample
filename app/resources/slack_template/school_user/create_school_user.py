@@ -1,0 +1,1 @@
+CREATE_SCHOOL_USER = "*学校アカウントが作成されました*\n" "• 学校名：{school_name}\n" "• 組織名：{school_department_name}\n" "• アカウント名：{school_user_name}\n" "• アカウント種類：{school_user_type}\n" "• 操作者：{operator}\n" "• DATE：{date}\n" "• URL：{url}"

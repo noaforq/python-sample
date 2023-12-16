@@ -1,0 +1,9 @@
+{{user_account_name}}様
+
+{{school_manager}}様とのチャットにて、新しいメッセージが届いています。
+
+チャットURL: {{chat_url}}
+
+本メールへの返信は、転送されませんのでご注意ください。
+
+TechFUL

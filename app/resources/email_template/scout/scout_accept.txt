@@ -1,0 +1,10 @@
+{{company_name}}様
+
+{{user_account_name}}様が求人の選考ステップを変更しました。
+
+ユーザー名: {{user_account_name}}
+選考ステップ: {{selection_step}}
+
+URL: {{selection_url}}
+
+TechFUL

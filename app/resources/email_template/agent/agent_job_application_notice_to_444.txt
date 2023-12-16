@@ -1,0 +1,7 @@
+444株式会社
+
+{{user_account_name}}様が{{company_name}}様の求人に応募しました。
+
+URL: {{selection_url}}
+
+TechFUL

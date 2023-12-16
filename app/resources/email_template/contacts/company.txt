@@ -1,0 +1,9 @@
+TechFUL お問い合わせページで、企業アカウントからお問い合わせがありました。
+
+企業名: {{ organization_name }}
+お名前: {{ name }}
+アカウント名: {{ username }}
+メールアドレス: {{ email }}
+
+本文:
+ {{ body }}
